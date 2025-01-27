@@ -1,0 +1,18 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-I./include/",
+      "-ggdb",
+      "-Wall",
+      "-Werror",
+      "-o",
+      "build/main",
+      "src/main.c"
+    ],
+    "directory": "/home/demindx/Documents/C/rqCalc",
+    "file": "/home/demindx/Documents/C/rqCalc/src/main.c",
+    "output": "/home/demindx/Documents/C/rqCalc/build/main"
+  }
+]
