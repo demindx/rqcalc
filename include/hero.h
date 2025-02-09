@@ -5,7 +5,7 @@
 #include "items.h"
 
 struct HeroItems{
-	struct Item *headgear;
+	struct Item *headGear;
 	struct Item *faceAccessory;
 	struct Item *armor;
 	struct Item *gloves;
@@ -28,7 +28,5 @@ struct Hero{
 	struct HeroItems *items;
 	struct HeroStats *stats;
 };
-
-void recalculateStats(struct HeroStats *stats, struct HeroItems *itmes);
 
 #endif

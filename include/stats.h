@@ -1,36 +1,40 @@
 #ifndef STATS_H
 #define STATS_H
 
+#define MAX_NAME_LENGTH 255
+
 #include "enums.h"
 
 struct HeroStats{
 	enum HeroClass class;
 
 	// BASE stats
-	
-	int health;
-	int classEnergy;
+	int level;
+	int points;
 
-	int mainClassStat;
-	int dexterity;
-	int stamina;
-	int luck;
+	float health;
+	float classEnergy;
 
-	int attack;
-	int attackSpeed;
-	int defense;
-	int hit;
-	int dodge;
+	float mainClassStat;
+	float dexterity;
+	float stamina;
+	float luck;
+
+	float attack;
+	float attackSpeed;
+	float defense;
+	float hit;
+	float dodge;
 	float criticalHitChance;
-	int criticalHit;
+	float criticalHit;
 
 	// EXTRA stats
 	// GENERAL
-	int experienceObtained;
-	int goldObtained;
-	int chanceOfLootDrops;
-	int movementSpeed;
-	int attackRange;
+	float experienceObtained;
+	float goldObtained;
+	float chanceOfLootDrops;
+	float movementSpeed;
+	float attackRange;
 
 	// HIT ?
 	
@@ -39,39 +43,48 @@ struct HeroStats{
 	float energyRestoration;
 
 	// PvP
-	int damage;
-	int damageResistance;
-	int controlResistance;
+	float damage;
+	float damageResistance;
+	float controlResistance;
 
 	// ELEMENTAL DAMAGE
-	int fire;
-	int water;
-	int earth;
-	int air;
-	int chaos;
-	int poison;
+	float fire;
+	float water;
+	float earth;
+	float air;
+	float chaos;
+	float poison;
 
 	// ELEMENTAL RESISTANCE
-	int fireResistance;
-	int waterResistance;
-	int earthResistance;
-	int airResistance;
-	int chaosResistance;
-	int poisonResistance;
+	float fireResistance;
+	float waterResistance;
+	float earthResistance;
+	float airResistance;
+	float chaosResistance;
+	float poisonResistance;
 
 
 	// RACE DAMAGE RESISTANCE
-	int humanoidsResistance;
-	int animalsResistance;
-	int plantsResistance;
-	int undeadResistance;
-	int orcsResistance;
-	int amphibiansResistance;
-	int magicalResistance;
-	int shapelessResistance;
-	int monstrositiesResistance;
-	int insectsResistance;
-	int mechanismsResistance;
+	float humanoidsResistance;
+	float animalsResistance;
+	float plantsResistance;
+	float undeadResistance; 
+	float orcsResistance;
+	float amphibiansResistance;
+	float magicalResistance;
+	float shapelessResistance;
+	float monstrositiesResistance;
+	float insectsResistance;
+	float mechanismsResistance;
 };
+
+
+struct Stat{
+	char name[MAX_NAME_LENGTH];
+	float value;
+};
+
+
+struct Stat *parse_stat(char *stat);
 
 #endif

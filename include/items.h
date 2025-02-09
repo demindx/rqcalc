@@ -1,15 +1,27 @@
 #ifndef ITEMS_H
 #define ITEMS_H
+
 #define MAX_ITEM_NAME_LENGTH 255
 
 #include "enums.h"
 #include "stats.h"
 
+
+struct Seal {
+	char name[MAX_ITEM_NAME_LENGTH];
+	struct Stat *greenStats;
+	struct Stat *blueStats;
+	struct Stat *violetStats;
+	struct Stat *orangeStats;
+};
+
+
 struct Card{
 	char name[MAX_ITEM_NAME_LENGTH];
 	char *icon;
 
-	void (*proccesStats)(struct HeroStats);
+	int statsLength;
+	struct Stat *stats;
 };
 
 
@@ -26,6 +38,10 @@ struct Item {
 	int cardSlotsLenght;
 	struct Card *cards;
 
-	void (*proccesStats)(struct HeroStats);
+	int statsLength;
+	struct Stat *stats;
+
+	struct Seal *seal;
 };
+
 #endif

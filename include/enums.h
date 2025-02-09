@@ -32,4 +32,11 @@ enum HeroClass{
 	ARCHER
 };
 
+enum SealColor{
+	GREEN,
+	BLUE,
+	VIOLET,
+	ORANGE
+};
+
 #endif
