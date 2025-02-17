@@ -1,14 +1,14 @@
 CC = clang
 
 WINDOWS_CC = x86_64-w64-mingw32-gcc
-WINDOWS_CFLAGS =  -I./include/ -ggdb -Wall -Werror `PKG_CONFIG_PATH=/usr/x86_64-w64-mingw32/sys-root/mingw/lib/pkgconfig/ pkg-config --cflags --libs gtk4`
+WINDOWS_CFLAGS =  -I./include/ -ggdb -Wall -Werror `PKG_CONFIG_PATH=/usr/x86_64-w64-mingw32/sys-root/mingw/lib/pkgconfig/ pkg-config --cflags --libs gtk4` -std=C99
 WINDOWS_BUILD_DIR = ./build/win/
 
 CLIBS = -lm
-CFLAGS = `pkg-config --cflags gtk4` -I./include/ -ggdb -Wall -Werror `pkg-config --libs gtk4`
+CFLAGS = `pkg-config --cflags gtk4` -I./include/ -ggdb -Wall -Werror `pkg-config --libs gtk4` -std=c99
 BUILD_DIR = ./build/
 
-SRC = src/main.c src/cJSON.c src/stats.c
+SRC = src/main.c src/cJSON.c src/stats.c src/card.c src/seal.c
 
 all: $(SRC)
 	$(clean)
